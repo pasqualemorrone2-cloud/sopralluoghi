@@ -1,0 +1,34 @@
+SOPRALLUOGHI DEC – prototipo di web app installabile (PWA)
+
+1. PUBBLICAZIONE (una volta sola, gratis, con GitHub Pages)
+   - Crea un account su github.com e un nuovo repository, per esempio "sopralluoghi".
+   - Carica nel repository tutti i file di questa cartella, mantenendo la sottocartella "lib"
+     (pulsante "Add file" > "Upload files", trascinando il contenuto della cartella).
+   - Settings > Pages > Source: "Deploy from a branch", branch "main", cartella "/ (root)", Save.
+   - Dopo un minuto l'app è raggiungibile a https://<tuo-utente>.github.io/sopralluoghi/
+   L'indirizzo https è necessario: senza, Android non concede GPS e fotocamera.
+   Il pacchetto del cantiere (pacchetto_teverola.json) NON va caricato su GitHub: si importa dal telefono.
+
+2. INSTALLAZIONE SU ANDROID
+   - Apri l'indirizzo con Chrome, menu ⋮ > "Installa app" (o "Aggiungi a schermata Home").
+   - Al primo avvio consenti posizione e fotocamera.
+
+3. USO
+   - Importa un pacchetto cantiere (es. pacchetto_teverola.json) oppure crea un cantiere e carica
+     lo stradario come GeoJSON o shapefile compresso .zip esportato da QGIS (campo "name" o "nome",
+     campo "lotto" se presente).
+   - "Inizia un sopralluogo" > "Scatta e segnala": la foto riceve in sovrimpressione strada,
+     coordinate, precisione, data e ora; gli stessi dati vanno nei metadati EXIF.
+   - A fine giornata: "Genera report" produce un .zip con verbale Word, registro Excel con link
+     a Google Maps, foto rinominate per numero e categoria, GeoJSON dei punti e planimetria.
+
+4. DATI E SICUREZZA
+   - I dati restano solo nel telefono (memoria del browser). Nessun server riceve foto o dati.
+   - Se si cancellano i dati di Chrome o si disinstalla l'app, i sopralluoghi si perdono:
+     usa "Esporta backup" o "Genera report" alla fine di ogni sopralluogo.
+   - "Ripristina backup" dalla schermata iniziale riporta un sopralluogo su un altro telefono.
+
+5. LIMITI DEL PROTOTIPO
+   - Il GPS funziona solo con l'app aperta in primo piano (niente tracciamento del percorso).
+   - La mappa senza rete mostra solo le zone già visualizzate con la rete.
+   - Intestazione, firma e logo del verbale si cambiano da Impostazioni (icona ⚙).
